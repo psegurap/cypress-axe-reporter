@@ -1,0 +1,27 @@
+{
+  "name": "cypress-axe-reporter",
+  "version": "1.0.0",
+  "description": "Simple HTML reporter for cypress-axe.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psegurap/cypress-axe-reporter.git"
+  },
+  "keywords": [
+    "cypress",
+    "axe-core",
+    "cypress-axe"
+  ],
+  "author": "Pedro Segura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psegurap/cypress-axe-reporter/issues"
+  },
+  "homepage": "https://github.com/psegurap/cypress-axe-reporter#readme",
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  }
+}
