@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/psegurap/cypress-axe-reporter#readme",
   "dependencies": {
-    "fs-extra": "^11.2.0"
+    "fs-extra": "^11.2.0",
+    "jsdom": "^25.0.1"
   }
 }
