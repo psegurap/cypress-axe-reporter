@@ -7,7 +7,7 @@
     },
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build-styles": "sass --load-path=node_modules --watch ./scss/styles.scss:./lib/styles.min.css --style compressed --no-source-map"
     },
     "repository": {
         "type": "git",
@@ -27,5 +27,9 @@
     "dependencies": {
         "fs-extra": "^11.2.0",
         "jsdom": "^25.0.1"
+    },
+    "devDependencies": {
+        "bulma": "^1.0.3",
+        "sass": "^1.83.1"
     }
 }
