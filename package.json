@@ -1,6 +1,6 @@
 {
     "name": "cypress-axe-reporter",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Simple reporter that integrates easily with Cypress and Cypress-Axe to output accessibility violations in a HTML format.",
     "engines": {
         "node": ">=14"

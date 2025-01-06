@@ -1,5 +1,7 @@
 html {
     height: 100%;
+    background-color: var(--bulma-white-ter);
+    min-width: 500px;
 }
 .hiding_details .card-header {
     border-bottom-right-radius: 12px;
