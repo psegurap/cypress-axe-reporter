@@ -6,6 +6,9 @@
 
 Simple reporter that integrates easily with [Cypress](https://github.com/cypress-io/cypress) and [Cypress-Axe](https://github.com/component-driven/cypress-axe) to output accessibility violations in a HTML format.
 
+[Example report](https://psegurap.github.io/cypress-axe-reporter/docs/example-report.html)
+
+<img src="./docs/report-screenshot.png" alt="A screenshot of an accessibility evaluation report showing multiple websites" width="50%" />
 
 ## Setup
 
@@ -39,7 +42,7 @@ Simple reporter that integrates easily with [Cypress](https://github.com/cypress
    });
    ```
 
-   If you are override `before:run` or `after:run` hooks, use this:
+   If you are to override `before:run` or `after:run` hooks, use this:
 
    ```js
     const { defineConfig } = require("cypress");
