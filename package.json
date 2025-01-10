@@ -19,7 +19,7 @@
         "cypress-axe"
     ],
     "author": "Pedro Segura",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/psegurap/cypress-axe-reporter/issues"
     },
