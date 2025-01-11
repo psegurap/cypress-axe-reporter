@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/cypress-axe-reporter)](http://www.npmjs.com/package/cypress-axe-reporter)
 [![node](https://img.shields.io/node/v/cypress-axe-reporter.svg)](https://github.com/psegurap/cypress-axe-reporter)
-
+[![npm](https://img.shields.io/npm/l/cypress-axe-reporter)](http://www.npmjs.com/package/cypress-axe-reporter)
 
 Simple reporter that integrates easily with [Cypress](https://github.com/cypress-io/cypress) and [Cypress-Axe](https://github.com/component-driven/cypress-axe) to output accessibility violations in a HTML format.
 
@@ -16,39 +16,41 @@ Simple reporter that integrates easily with [Cypress](https://github.com/cypress
 
 1. install cypress-axe-reporter
 
-   ```
-   npm i --save-dev cypress-axe-reporter
-   ```
+    ```
+    npm i --save-dev cypress-axe-reporter
+    ```
 
-   or
+    or
 
-   ```
-   yarn add -D cypress-axe-reporter
-   ```
+    ```
+    yarn add -D cypress-axe-reporter
+    ```
 
 2. Change cypress reporter & setup hooks
 
-   Edit config file (`cypress.config.js` by default)
+    Edit config file (`cypress.config.js` by default)
 
-   ```js
-   const { defineConfig } = require('cypress');
+    ```js
+    const { defineConfig } = require("cypress");
 
-   module.exports = defineConfig({
-     e2e: {
-       setupNodeEvents(on, config) {
-         require('cypress-axe-reporter/plugin')(on);
-       },
-     },
-   });
-   ```
+    module.exports = defineConfig({
+        reporter: "cypress-axe-reporter",
+        e2e: {
+            setupNodeEvents(on, config) {
+                require("cypress-axe-reporter/plugin")(on);
+            },
+        },
+    });
+    ```
 
-   If you are to override `before:run` or `after:run` hooks, use this:
+    If you are to override `before:run` or `after:run` hooks, use this:
 
-   ```js
+    ```js
     const { defineConfig } = require("cypress");
     const { beforeRunHook, afterRunHook } = require("cypress-axe-reporter/lib");
 
     module.exports = defineConfig({
+        reporter: "cypress-axe-reporter",
         e2e: {
             setupNodeEvents(on, config) {
                 on("before:run", async (details) => {
@@ -61,13 +63,13 @@ Simple reporter that integrates easily with [Cypress](https://github.com/cypress
             },
         },
     });
-   ```
+    ```
 
 3. Add to `cypress/support/e2e.js`
 
-   ```js
-   import 'cypress-axe-reporter/register'
-   ```
+    ```js
+    import "cypress-axe-reporter/register";
+    ```
 
 4. Specify `cy.cypressAxeReporterCallBack` as the [violationCallback](https://github.com/component-driven/cypress-axe?tab=readme-ov-file#using-the-violationcallback-argument) argument
 
@@ -75,6 +77,6 @@ Simple reporter that integrates easily with [Cypress](https://github.com/cypress
     it("check for violations", () => {
         cy.checkA11y(null, null, cy.cypressAxeReporterCallBack);
     });
-   ```
+    ```
 
 5. Run cypress
