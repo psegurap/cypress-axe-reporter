@@ -1,9 +1,16 @@
-const { defaultJSONA11yOutputFolder } = require("./lib/consts");
+let { defaultJSONA11yOutputFolder } = require("./lib/consts");
+
+let reporterOptions = Cypress.config("reporterOptions");
+console.log(reporterOptions);
+
+let reportDir = reporterOptions.reportDir
+    ? reporterOptions.reportDir + "/a11y-jsons/"
+    : defaultJSONA11yOutputFolder;
 
 const cypressAxeReporterCallBack = (violations) => {
     cy.writeFile(
         `./${
-            defaultJSONA11yOutputFolder + Cypress.spec.baseName
+            reportDir + Cypress.spec.baseName
         } - ${Cypress.currentTest.title.replace(/[^a-zA-Z ]/g, "")}.json`,
         {
             test_info: {

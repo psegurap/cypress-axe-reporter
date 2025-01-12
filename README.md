@@ -80,3 +80,34 @@ Simple reporter that integrates easily with [Cypress](https://github.com/cypress
     ```
 
 5. Run cypress
+
+## Custom options
+
+If you want to customize your HTML report, add the desired flags to `reporterOptions`
+
+```js
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+    reporter: "cypress-axe-reporter",
+    reporterOptions: {
+        reportDir: "cypress/report-folder/",
+    },
+    e2e: {
+        setupNodeEvents(on, config) {
+            require("cypress-axe-reporter/plugin")(on);
+        },
+    },
+});
+```
+
+### CLI Flags
+
+| Flag                  | Type    | Default              | Description                              |
+| :-------------------- | :------ | :------------------- | :--------------------------------------- |
+| -f, --reportFilename  | string  | accessibility-report | Filename of saved report.                |
+| -o, --reportDir       | string  | [cwd]/reports/       | Path to save report                      |
+| -t, --reportTitle     | string  | Accessibility Report | Report title                             |
+| -p, --reportPageTitle | string  | Accessibility Report | Browser title                            |
+| --saveJson            | boolean | false                | Should report data be saved to JSON file |
+| --saveHtml            | boolean | true                 | Should report be saved to HTML file      |
