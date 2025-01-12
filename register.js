@@ -4,7 +4,7 @@ let reporterOptions = Cypress.config("reporterOptions");
 console.log(reporterOptions);
 
 let reportDir = reporterOptions.reportDir
-    ? reporterOptions.reportDir + "/a11y-jsons/"
+    ? reporterOptions.reportDir + "/json/"
     : defaultJSONA11yOutputFolder;
 
 const cypressAxeReporterCallBack = (violations) => {
