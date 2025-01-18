@@ -12,37 +12,39 @@ const cypressAxeReporterCallBack = (violations) => {
     } - ${Cypress.currentTest.title.replace(/[^a-zA-Z ]/g, "")}.json`;
 
     if(Cypress.config("reporter") === "cypress-axe-reporter") {
-        cy.writeFile(
-            path.join("./", drOpts.reportDir, drOpts.a11yJsonDir, file_name),
-            {
-                test_info: {
-                    baseName: Cypress.spec.baseName,
-                    fileName: Cypress.spec.fileName,
-                    relative_path: Cypress.spec.relative,
-                    spec_title: Cypress.currentTest.titlePath[0],
-                    test_title: Cypress.currentTest.title,
-                },
-                a11y: {
-                    url: window.location.origin,
-                    violations: violations.map(
-                        ({ id, impact, description, help, helpUrl, nodes }) => ({
-                            id,
-                            impact,
-                            description,
-                            help,
-                            helpUrl,
-                            nodes: nodes.map(
-                                ({ html, target, failureSummary }) => ({
-                                    html,
-                                    target,
-                                    failureSummary,
-                                })
-                            ),
-                        })
-                    ),
-                },
-            }
-        );
+        cy.url().then(url => {
+            cy.writeFile(
+                path.join("./", drOpts.reportDir, drOpts.a11yJsonDir, file_name),
+                {
+                    test_info: {
+                        baseName: Cypress.spec.baseName,
+                        fileName: Cypress.spec.fileName,
+                        relative_path: Cypress.spec.relative,
+                        spec_title: Cypress.currentTest.titlePath[0],
+                        test_title: Cypress.currentTest.title,
+                    },
+                    a11y: {
+                        url: url,
+                        violations: violations.map(
+                            ({ id, impact, description, help, helpUrl, nodes }) => ({
+                                id,
+                                impact,
+                                description,
+                                help,
+                                helpUrl,
+                                nodes: nodes.map(
+                                    ({ html, target, failureSummary }) => ({
+                                        html,
+                                        target,
+                                        failureSummary,
+                                    })
+                                ),
+                            })
+                        ),
+                    },
+                }
+            );
+        })
     }
 };
 
