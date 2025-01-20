@@ -103,11 +103,12 @@ module.exports = defineConfig({
 
 ### CLI Flags
 
-| Flag              | Type    | Default              | Description                              |
-| :---------------- | :------ | :------------------- | :--------------------------------------- |
-| --reportFilename  | string  | accessibility-report | Filename of saved report.                |
-| --reportDir       | string  | [cwd]/reports/       | Path to save report                      |
-| --reportTitle     | string  | Accessibility Report | Report title                             |
-| --reportPageTitle | string  | Accessibility Report | Browser title                            |
-| --saveJson        | boolean | false                | Should report data be saved to JSON file |
-| --saveHtml        | boolean | true                 | Should report be saved to HTML file      |
+| Flag              | Type    | Default              | Description                               |
+| :---------------- | :------ | :------------------- | :---------------------------------------- |
+| --reportFilename  | string  | accessibility-report | Filename of saved report.                 |
+| --reportDir       | string  | [cwd]/reports/       | Path to save report                       |
+| --reportTitle     | string  | Accessibility Report | Report title                              |
+| --reportPageTitle | string  | Accessibility Report | Browser title                             |
+| --saveJson        | boolean | false                | Should report data be saved to JSON file  |
+| --saveHtml        | boolean | true                 | Should report be saved to HTML file       |
+| --includeSummary  | boolean | false                | Should report include count of violations |
