@@ -3,40 +3,74 @@ html {
     background-color: var(--bulma-white-ter);
     min-width: 500px;
 }
-.hiding_details .card-header {
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
+
+.hiding_details {
+    .card-header {
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+
+    .card-content {
+        display: none;
+    }
+    .hide-details-button {
+        display: none;
+    }
+    
+    .view-details-button {
+        display: block !important;
+    }
 }
-.hiding_details .card-content {
-    display: none;
-}
-.hiding_details .hide-details-button {
-    display: none;
-}
-.hiding_details .view-details-button {
-    display: block !important;
-}
+
 .filter-current-option {
     background-color: rgb(46, 51, 61);
     color: white;
 }
-body[filter_by_impact="critical"] li[impact="serious"],
-body[filter_by_impact="critical"] li[impact="moderate"],
-body[filter_by_impact="critical"] li[impact="minor"] {
-    display: none;
+
+body[filter_by_impact=critical] {
+    li[impact=serious],
+    li[impact=moderate],
+    li[impact=minor] {
+        display: none;
+    }
 }
-body[filter_by_impact="serious"] li[impact="critical"],
-body[filter_by_impact="serious"] li[impact="moderate"],
-body[filter_by_impact="serious"] li[impact="minor"] {
-    display: none;
+
+body[filter_by_impact=serious] {
+    li[impact=critical],
+    li[impact=moderate],
+    li[impact=minor] {
+        display: none;
+    }
 }
-body[filter_by_impact="moderate"] li[impact="serious"],
-body[filter_by_impact="moderate"] li[impact="critical"],
-body[filter_by_impact="moderate"] li[impact="minor"] {
-    display: none;
+
+body[filter_by_impact=moderate] {
+    li[impact=serious],
+    li[impact=critical],
+    li[impact=minor] {
+        display: none;
+    }
 }
-body[filter_by_impact="minor"] li[impact="serious"],
-body[filter_by_impact="minor"] li[impact="moderate"],
-body[filter_by_impact="minor"] li[impact="critical"] {
-    display: none;
+
+body[filter_by_impact=minor] {
+    li[impact=serious],
+    li[impact=moderate],
+    li[impact=critical] {
+        display: none;
+    }
+}
+
+body[filter_by_impact=all] .card {
+    display: block !important;
+}
+body[filter_by_impact=critical] [has-critical=true] {
+    display: block !important;
+}
+body[filter_by_impact=serious] [has-serious=true] {
+    display: block !important;
+}
+body[filter_by_impact=moderate] [has-moderate=true] {
+    display: block !important;
+}
+body[filter_by_impact=minor] [has-minor=true] {
+    display: block !important;
 }
