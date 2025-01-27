@@ -27,50 +27,39 @@ html {
     color: white;
 }
 
+body[filter_by_impact=all] .card {
+    display: block !important;
+
+    .v-detail {
+        display: block !important;
+    }
+}
+
 body[filter_by_impact=critical] {
-    li[impact=serious],
-    li[impact=moderate],
-    li[impact=minor] {
-        display: none;
+
+    [has-critical=true], li[impact=critical] {
+        display: block !important;
     }
 }
 
 body[filter_by_impact=serious] {
-    li[impact=critical],
-    li[impact=moderate],
-    li[impact=minor] {
-        display: none;
+
+    [has-serious=true], li[impact=serious] {
+        display: block !important;
     }
 }
 
 body[filter_by_impact=moderate] {
-    li[impact=serious],
-    li[impact=critical],
-    li[impact=minor] {
-        display: none;
+
+    [has-moderate=true], li[impact=moderate] {
+        display: block !important;
     }
 }
 
 body[filter_by_impact=minor] {
-    li[impact=serious],
-    li[impact=moderate],
-    li[impact=critical] {
-        display: none;
+
+    [has-minor=true], li[impact=minor] {
+        display: block !important;
     }
 }
 
-body[filter_by_impact=all] .card {
-    display: block !important;
-}
-body[filter_by_impact=critical] [has-critical=true] {
-    display: block !important;
-}
-body[filter_by_impact=serious] [has-serious=true] {
-    display: block !important;
-}
-body[filter_by_impact=moderate] [has-moderate=true] {
-    display: block !important;
-}
-body[filter_by_impact=minor] [has-minor=true] {
-    display: block !important;
-}
