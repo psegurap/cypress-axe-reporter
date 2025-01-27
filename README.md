@@ -6,9 +6,9 @@
 
 Simple reporter that integrates easily with [Cypress](https://github.com/cypress-io/cypress) and [Cypress-Axe](https://github.com/component-driven/cypress-axe) to output accessibility violations in a HTML format.
 
-[Example report](./docs/example-report.html)
+[Example report](./docs/cypress-axe-reporter.html)
 
-<img src="./docs/report-screenshot.png" alt="A screenshot of an accessibility evaluation report showing multiple websites" width="50%" />
+<img src="./docs/sample-report-screenshot.png" alt="A screenshot of an accessibility evaluation report showing multiple websites" width="70%" />
 
 ## Setup
 
