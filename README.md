@@ -2,9 +2,10 @@
 
 [![npm](https://img.shields.io/npm/v/cypress-axe-reporter)](http://www.npmjs.com/package/cypress-axe-reporter)
 [![node](https://img.shields.io/node/v/cypress-axe-reporter.svg)](https://github.com/psegurap/cypress-axe-reporter)
+[![npm](https://img.shields.io/npm/dm/cypress-axe-reporter)](http://www.npmjs.com/package/cypress-axe-reporter)
 [![npm](https://img.shields.io/npm/l/cypress-axe-reporter)](http://www.npmjs.com/package/cypress-axe-reporter)
 
-Simple reporter that integrates easily with [Cypress](https://github.com/cypress-io/cypress) and [Cypress-Axe](https://github.com/component-driven/cypress-axe) to output accessibility violations in a HTML format.
+[Cypress-Axe](https://github.com/component-driven/cypress-axe) reporter that outputs accessibility violations in a HTML format.
 
 [Example report](./docs/cypress-axe-reporter.html)
 
@@ -111,4 +112,4 @@ module.exports = defineConfig({
 | --reportPageTitle | string  | Accessibility Report | Browser title                             |
 | --saveJson        | boolean | false                | Should report data be saved to JSON file  |
 | --saveHtml        | boolean | true                 | Should report be saved to HTML file       |
-| --includeSummary  | boolean | false                | Should report include count of violations |
+| --includeSummary  | boolean | false                | Should report include count of all violations found violations |
