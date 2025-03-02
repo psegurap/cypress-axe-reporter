@@ -7,7 +7,7 @@
 
 [Cypress-Axe](https://github.com/component-driven/cypress-axe) reporter that outputs accessibility violations in a HTML format.
 
-[Example report](./docs/cypress-axe-reporter.html)
+[Example report](https://psegurap.github.io/cypress-axe-reporter/example-report.html)
 
 <img src="./docs/sample-report-screenshot.png" alt="A screenshot of an accessibility evaluation report showing multiple websites" width="70%" />
 
