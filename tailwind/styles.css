@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button[aria-expanded="false"] .arrow-icon {
+    transform: rotate(180deg);
+}
+
+button[aria-expanded="false"] + .card-body {
+    display: none;
+}
+
+body[data-filter="all"] button[data-filter-by="all"] {
+    background-color: #f6f3f4;
+}
+body[data-filter="critical"] button[data-filter-by="critical"] {
+    background-color: #f6f3f4;
+}
+body[data-filter="serious"] button[data-filter-by="serious"] {
+    background-color: #f6f3f4;
+}
+body[data-filter="moderate"] button[data-filter-by="moderate"] {
+    background-color: #f6f3f4;
+}
+body[data-filter="minor"] button[data-filter-by="minor"] {
+    background-color: #f6f3f4;
+}
+
+body[data-filter="all"] li:has(button[data-has-impact]) {
+    display: block;
+}
+body[data-filter="critical"] li:has(button[data-has-impact*="critical"]) {
+    display: block;
+}
+body[data-filter="serious"] li:has(button[data-has-impact*="serious"]) {
+    display: block;
+}
+body[data-filter="moderate"] li:has(button[data-has-impact*="moderate"]) {
+    display: block;
+}
+body[data-filter="minor"] li:has(button[data-has-impact*="minor"]) {
+    display: block;
+}
+
+body[data-filter="all"] li[data-has-impact] {
+    display: block;
+}
+body[data-filter="critical"] li[data-has-impact*="critical"] {
+    display: block;
+}
+body[data-filter="serious"] li[data-has-impact*="serious"] {
+    display: block;
+}
+body[data-filter="moderate"] li[data-has-impact*="moderate"] {
+    display: block;
+}
+body[data-filter="minor"] li[data-has-impact*="minor"] {
+    display: block;
+}
