@@ -1,13 +1,13 @@
 {
     "name": "cypress-axe-reporter",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "description": "Simple reporter that integrates easily with Cypress and Cypress-Axe to output accessibility violations in a HTML format.",
     "engines": {
         "node": ">=14"
     },
     "main": "index.js",
     "scripts": {
-        "build-styles": "sass --load-path=node_modules --watch ./scss/styles.scss:./lib/styles.min.css --style compressed --no-source-map"
+        "build-styles": "npx tailwindcss -i ./tailwind/styles.css -o ./lib/styles.min.css --watch --minify"
     },
     "repository": {
         "type": "git",
@@ -28,13 +28,12 @@
         "fs-extra": "^11.2.0",
         "jsdom": "^25.0.1"
     },
-    "devDependencies": {
-        "bulma": "^1.0.3",
-        "sass": "^1.83.1"
-    },
     "peerDependencies": {
         "axe-core": "^3 || ^4",
         "cypress": "^10 || ^11 || ^12 || ^13 || ^14 || ^15",
-        "cypress-axe" : "^1"
+        "cypress-axe": "^1"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.18"
     }
 }
